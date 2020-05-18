@@ -5,7 +5,7 @@
 \red27\green29\blue31;\red199\green200\blue201;\red26\green28\blue31;}
 {\*\expandedcolortbl;;\cssrgb\c100000\c100000\c100000;\cssrgb\c0\c1\c1;\cssrgb\c100000\c100000\c99985;
 \cssrgb\c14118\c15294\c16078;\cssrgb\c81961\c82353\c82745;\cssrgb\c13333\c14510\c16078;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww12920\viewh8400\viewkind0
+\paperw11900\paperh16840\margl1440\margr1440\vieww13380\viewh13060\viewkind0
 \pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
 
 \f0\fs24 \cf0 Recommendations\
@@ -213,6 +213,120 @@ ELSE \'91Evitar a toda costa\'92 \
 END AS \'91Review\'92\
 FROM movies; \
 \cf3 \
+\
+\
+Clase03\
+\
+// See column\
+.header ON \
+\
+//Aggregates. Calculus sobre las filas \
+\
+//COUNT cuantos filas hay en una columna\
+SELECT COUNT(*)\
+FROM table_name\
+\
+SELECT COUNT (DISTINCT year)\
+FROM movies; \
+\
+//SUM sum of all values of the column \
+SELECT SUM(imdb_rating)\
+FROM movies; \
+\
+//MAX(), MIN()\
+SELECT MAX(imdb_rating)\
+FROM movies; \
+\
+SELECT name, MAX(imdb_rating)\
+FROM movies; \
+\
+//average\
+SELECT AVG(imdb_rating)\
+FROM movies; \
+\
+SELECT AVG(DISTINCT imdb_rating) \
+FROM movies;\
+\
+//rounding\
+//SELECT ROUND(3.5, 0) ==> 4\
+\
+SELECT name, ROUND(imdb_rating, 0)\
+FROM movies; \
+\
+SELECT ROUND(AVG(imdb_rating), 0)\
+FROM movies; \
+\
+//GROUP BY ==> \
+\
+SELECT AVG(imdb_rating)\
+FROM movies\
+WHERE year = 19999\
+\
+\pard\pardeftab720\partightenfactor0
+\cf3 \
+SELECT AVG(imdb_rating)\
+FROM movies\
+WHERE year = 2000\
+\pard\pardeftab720\partightenfactor0
+\cf3 \
+\pard\pardeftab720\partightenfactor0
+\cf3 \
+SELECT AVG(imdb_rating)\
+FROM movies\
+WHERE year = 2004\
+\
+\'85.\
+\
+//Better: \
+SELECT year, \
+AVG(imdb_rating)\
+FROM movies\
+GROUP BY year\
+ORDER BY year;\
+\
+SELECT year, AVG(imdb_rating)\
+FROM movies \
+GROUP BY 1\
+ORDER BY 1;\
+\
+//Having\
+SELECT year, genre, COUNT(name)\
+FROM movies\
+GROUP BY year, genre\
+HAVING COUNT(name) > 5; \
+\
+\
+//INNER JOIN\
+SELECT * \
+FROM orders \
+JOIN customers\
+ON orders.customer_id = customers.customer_id; \
+\pard\pardeftab720\partightenfactor0
+\cf3 \
+\
+SELECT orders.order_id, customers.customer_name\
+FROM orders\
+JOIN customers\
+ON orders.customer_id = customers.customer_id\
+\
+\
+SELECT * \
+FROM orders \
+JOIN subscriptions\
+ON orders.subscription_id = subscriptions.subscription_id\
+WHERE subscription.description = \'91Fashion Magazine\'92\
+\
+\
+//left join\
+SELECT *\
+FROM table_1\
+LEFT JOIN table2\
+  ON table1.c2 = table2.c2; \
+\
+//INNER JOIN solo where match between the ON\
+\
+\
+\
 \
 \pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
 \cf3 \
