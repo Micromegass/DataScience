@@ -43,43 +43,47 @@
 def average(num1,num2):
     return (num1+num2) / 2
 
+print(average(4,2))
 
 def tenth_power(num):
     return num**10
 
+print(tenth_power(5))
 
 def introduction(first, last):
-    return last + ', ' + first + ' last'
+    return last + ', ' + first + ' ' + last
 
+print(introduction("axel", "simon"))
 
 def square_root(num):
     return num**1/2
 
+print(square_root(4))
 
 def tip(total, precentage):
-    propina = total * precentage
+    propina = (total * precentage)/100
     amount = total + propina
-    return amount, precentag
+    return amount, precentage
 
+print(tip(100, 10))
 
 def win_percentage(wins, losses):
     total = wins + losses
     ganados = (total/100) * wins
     return ganados
 
+print(win_percentage(10, 5))
 
 def first_three_multiples(num):
     print(num)
     print(num*2)
     print(num * 3)
-    return num
+    return num*3
 
+print(first_three_multiples(7))
 
 def dog_years(name, age):
     dog_years = age * 7
     return f"{name}, tu tienes {dog_years} años en años de perro"
 
-
-
-
-
+print(dog_years("Axel", 5))
