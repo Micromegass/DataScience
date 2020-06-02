@@ -12,7 +12,7 @@ age = []
 age.append(42)
 all_ages = age + [32, 41, 29]
 name_and_age = all_ages + first_names
-ids = list(range(3))
+ids = list(range(4))
 
 
 #Part II
@@ -52,6 +52,7 @@ print(full_gradebook)
 toppings = ["pepperoni", "pineapple", "cheese", "sausage", "olives", "anchovies", "mushrooms"]
 prices = [2, 6, 1, 3, 2, 7, 2]
 num_pizzas = len(toppings)
+print(num_pizzas)
 print(f"We sell {num_pizzas} different kinds of pizza!")
 pizzas = list(zip(toppings, prices))
 print(pizzas)
@@ -65,3 +66,13 @@ three_cheapest = pizzas_sorted[:3]
 print(three_cheapest)
 num_two_dollar_slices = prices.count(2)
 print(num_two_dollar_slices)
+
+# Resultado Parte III
+# 7
+# We sell 7 different kinds of pizza!
+# [('pepperoni', 2), ('pineapple', 6), ('cheese', 1), ('sausage', 3), ('olives', 2), ('anchovies', 7), ('mushrooms', 2)]
+# [(1, 'cheese'), (2, 'mushrooms'), (2, 'olives'), (2, 'pepperoni'), (3, 'sausage'), (6, 'pineapple'), (7, 'anchovies')]
+# (1, 'cheese')
+# (7, 'anchovies')
+# [(1, 'cheese'), (2, 'mushrooms'), (2, 'olives')]
+# 3
