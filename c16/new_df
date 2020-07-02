@@ -1,0 +1,5 @@
+,Poduct ID,Descripcion,OtroCantiad,Costo de Manufactura,Precio,Cantidad,En Inventario,Impuesto a las Ventas,Impuesto a las Ventas 2,Doble Precio,Valor en $ en Inventario
+0,1,Martillo,100,0.5,0.75,1,True,0.75,0.5,1.5,0.75
+1,2,Clavos,40,0.1,0.25,2,True,0.25,0.1,0.5,0.5
+2,3,Hombre Solo,5,3.0,5.5,3,True,5.5,3.0,11.0,16.5
+3,4,Lija,6,2.5,3.0,4,True,3.0,2.5,6.0,12.0
